@@ -1,0 +1,26 @@
+<h2>Orders</h2>
+<div>
+  <form id="filter">
+    <label for="">Filter orders by country name: </label>
+    <input type="text" [(ngModel)]="term" name="ordersFilterInput">
+  </form>
+
+  <div class="card" *ngFor="let order of orders | filter:term">
+    <div class="card-body">
+      <h3> Order ID: {{ order.id }}</h3>
+      <p>Manager name: {{ order.managerName }}</p>
+      <p>Organization name: {{ order.organization }}</p>
+      <p>Number of athletes: {{ order.numberOfAthletes }}</p>
+      <p>Country: {{ order.country }}</p>
+      <p>Order status: {{ order.status }}</p>
+      <h5>Requirements: </h5>
+      <div>
+        <p>Sauna required: {{ order.value.requirements.sauna }}</p>
+        <p>Gym required: {{ order.value.requirements.gym }}</p>
+        <p>numberOfTrainingsSessions: {{ order.value.requirements.numberOfTrainingsSession }}</p>
+      </div>
+    </div>
+  </div>
+
+
+</div>
