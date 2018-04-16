@@ -11,6 +11,8 @@ export class OrdersComponent implements OnInit {
 
   @Input() term: any;
   orders: Order[];
+  isGrouped: boolean;
+  ordersGroupedByManagerName: Order[];
   ordersTmp: Order[];
 
   constructor(private orderService: OrderService) { }
@@ -19,6 +21,16 @@ export class OrdersComponent implements OnInit {
     this.orderService.getOrders().subscribe(orders => {
       this.orders = orders;
     });
+    this.orderService.getOrdersOrderedByName().subscribe(ordersGroupedByManagerName => {
+      this.ordersGroupedByManagerName = ordersGroupedByManagerName;
+    });
+    this.isGrouped = false;
   }
+
+  groupByManagerName() {
+    this.orders
+  }
+
   
+
 }

@@ -60,6 +60,9 @@
     }
   },
   "defaults": {
+    "serve": {
+      "deployUrl":"/dashboard"
+    },
     "styleExt": "css",
     "component": {}
   }

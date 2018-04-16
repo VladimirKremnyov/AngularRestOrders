@@ -13,11 +13,16 @@ const httpOptions = {
 export class OrderService {
 
   ordersUrl: string = 'http://localhost:8080/orders';
+  orderedOrdersUrl: string = 'http://localhost:8080/ordersOrderedByManagerName';
 
   constructor(private http: HttpClient) { }
 
   getOrders(): Observable<Order[]> {
     return this.http.get<Order[]>(this.ordersUrl);
+  }
+
+  getOrdersOrderedByName(): Observable<Order[]> {
+    return this.http.get<Order[]>(this.orderedOrdersUrl);
   }
 
 }
